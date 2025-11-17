@@ -9,5 +9,5 @@ import { GameManager } from '../../../services/game-manager';
 })
 export class GuessTracker {
   gameManager = inject(GameManager);
-  guessNumber = this.gameManager.guesses;
+  guessNumber = this.gameManager.remainingGuesses;
 }

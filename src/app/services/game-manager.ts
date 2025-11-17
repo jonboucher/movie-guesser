@@ -5,7 +5,7 @@ import { Movie } from '../features/guessing-game/models/movie.type';
   providedIn: 'root',
 })
 export class GameManager {
-  guesses = signal(5);
+  remainingGuesses = signal(5);
 
   movie: Movie = {
     id: 0,

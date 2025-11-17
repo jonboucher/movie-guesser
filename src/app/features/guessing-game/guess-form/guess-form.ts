@@ -14,7 +14,7 @@ export class GuessForm {
 
   handleSubmit(e: SubmitEvent) {
     e.preventDefault();
-    this.gameManager.guesses.update((num) => num - 1);
+    this.gameManager.remainingGuesses.update((num) => num - 1);
     console.log(this.movieGuess);
   }
 }
