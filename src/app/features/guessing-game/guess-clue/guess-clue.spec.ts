@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameImage } from './game-image';
+import { GuessClue } from './guess-clue';
 
-describe('GameImage', () => {
-  let component: GameImage;
-  let fixture: ComponentFixture<GameImage>;
+describe('GuessClue', () => {
+  let component: GuessClue;
+  let fixture: ComponentFixture<GuessClue>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GameImage]
+      imports: [GuessClue]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(GameImage);
+    fixture = TestBed.createComponent(GuessClue);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
