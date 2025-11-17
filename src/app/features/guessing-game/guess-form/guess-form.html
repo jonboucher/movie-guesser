@@ -1,1 +1,11 @@
-<p>guess-form works!</p>
+<form (submit)="handleSubmit($event)">
+  <input
+    id="guess-search"
+    name="guess-search"
+    type="text"
+    placeholder="Guess the movie"
+    aria-label="Guess the movie"
+    [(ngModel)]="movieGuess"
+  />
+  <button type="submit">Make your guess</button>
+</form>
