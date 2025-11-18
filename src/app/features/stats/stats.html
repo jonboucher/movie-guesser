@@ -1,1 +1,6 @@
-<p>stats works!</p>
+<h2>{{ gameManager.gameOverMessage() }}</h2>
+
+<p>Games Won: {{ gameManager.gamesWon() }}</p>
+<p>Game Lost: {{ gameManager.gamesLost() }}</p>
+
+<button (click)="gameManager.initializeGame()">Play again</button>

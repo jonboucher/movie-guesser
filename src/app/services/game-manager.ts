@@ -1,11 +1,17 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '../features/guessing-game/models/movie.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GameManager {
+  router = inject(Router);
+
   remainingGuesses = signal(5);
+  gamesWon = signal(0);
+  gamesLost = signal(0);
+  gameOverMessage = signal('');
 
   movie: Movie = {
     id: 0,
@@ -19,4 +25,10 @@ export class GameManager {
     tagline: 'May the force be with you.',
     image: 'image.jpg',
   };
+
+  initializeGame() {
+    this.remainingGuesses.set(5);
+    this.gameOverMessage.set('');
+    this.router.navigate(['']);
+  }
 }

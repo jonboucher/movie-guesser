@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { GameManager } from '../../services/game-manager';
 
 @Component({
   selector: 'app-stats',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './stats.scss',
 })
 export class Stats {
-
+  gameManager = inject(GameManager);
 }
