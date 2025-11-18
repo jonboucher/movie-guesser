@@ -4,15 +4,20 @@
 <br />
 <div class="clues" style="border: 1px solid black; padding: 16px">
   <h3>Clues</h3>
+
   @if (gameManager.remainingGuesses() <= 5 ) {
-  <app-guess-clue />
+  <app-guess-clue title="Release Date" [clue]="movie.release_date" />
+  <app-guess-clue title="Genre" [clue]="movie.genres" />
+  <app-guess-clue title="Rating" [clue]="movie.vote_average" />
+
   } @if (gameManager.remainingGuesses() <= 4 ) {
-  <app-guess-clue />
+  <app-guess-clue title="Cast" [clue]="movie.cast" />
+
   } @if (gameManager.remainingGuesses() <= 3 ) {
-  <app-guess-clue />
+  <app-guess-clue title="Tagline" [clue]="movie.tagline" />
   } @if (gameManager.remainingGuesses() <= 2 ) {
-  <app-guess-clue />
+  <app-guess-clue title="Overview" [clue]="movie.overview" />
   } @if (gameManager.remainingGuesses() <= 1 ) {
-  <app-guess-clue />
+  <app-guess-clue title="Pic" [clue]="movie.image" />
   }
 </div>

@@ -7,4 +7,5 @@ export type Movie = {
   cast: string[];
   genres: string[];
   tagline: string;
+  image: string;
 };

@@ -17,5 +17,6 @@ export class GameManager {
     cast: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
     genres: ['science fiction', 'adventure', 'space opera'],
     tagline: 'May the force be with you.',
+    image: 'image.jpg',
   };
 }

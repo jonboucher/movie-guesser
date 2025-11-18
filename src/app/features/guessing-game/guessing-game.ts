@@ -12,4 +12,5 @@ import { GameManager } from '../../services/game-manager';
 })
 export class GuessingGame {
   gameManager = inject(GameManager);
+  movie = this.gameManager.movie;
 }
