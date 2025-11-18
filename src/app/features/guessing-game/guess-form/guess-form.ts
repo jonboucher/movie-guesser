@@ -11,10 +11,17 @@ import { GameManager } from '../../../services/game-manager';
 export class GuessForm {
   gameManager = inject(GameManager);
   movieGuess: string = '';
+  movieTitle: string = this.gameManager.movie.title;
 
   handleSubmit(e: SubmitEvent) {
     e.preventDefault();
-    this.gameManager.remainingGuesses.update((num) => num - 1);
-    console.log(this.movieGuess);
+
+    if (this.movieGuess.length > 0) {
+      this.gameManager.remainingGuesses.update((num) => num - 1);
+
+      if (this.movieGuess.trim().toLowerCase() === this.movieTitle.trim().toLowerCase()) {
+        console.log('Victory');
+      }
+    }
   }
 }

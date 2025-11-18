@@ -15,8 +15,10 @@
 
   } @if (gameManager.remainingGuesses() <= 3 ) {
   <app-guess-clue title="Tagline" [clue]="movie.tagline" />
+
   } @if (gameManager.remainingGuesses() <= 2 ) {
   <app-guess-clue title="Overview" [clue]="movie.overview" />
+
   } @if (gameManager.remainingGuesses() <= 1 ) {
   <app-guess-clue title="Pic" [clue]="movie.image" />
   }
