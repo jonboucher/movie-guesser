@@ -7,7 +7,7 @@
 
   @if (gameManager.remainingGuesses() <= 5 ) {
   <app-guess-clue title="Release Date" [clue]="this.gameManager.movie().release_date" />
-  <!-- <app-guess-clue title="Genre" [clue]="movie().genres" /> -->
+  <app-guess-clue title="Genre" [clue]="this.gameManager.movie().genres" />
   <app-guess-clue title="Rating" [clue]="this.gameManager.movie().vote_average" />
 
   } @if (gameManager.remainingGuesses() <= 4 ) {

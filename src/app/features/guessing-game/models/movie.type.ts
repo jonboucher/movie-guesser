@@ -4,8 +4,9 @@ export type Movie = {
   release_date: string;
   vote_average: number;
   overview: string;
+  director: string[];
   cast: string[];
-  genres: number[] | string[];
+  genres: string[];
   tagline: string;
   backdrop_path: string;
 };

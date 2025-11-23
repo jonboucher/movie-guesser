@@ -1,9 +1,8 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { GuessForm } from './guess-form/guess-form';
 import { GuessTracker } from './guess-tracker/guess-tracker';
 import { GuessClue } from './guess-clue/guess-clue';
 import { GameManager } from '../../services/game-manager';
-import { Movie } from './models/movie.type';
 
 @Component({
   selector: 'app-guessing-game',
