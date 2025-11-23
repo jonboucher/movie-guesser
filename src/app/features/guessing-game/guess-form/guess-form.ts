@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GameManager } from '../../../services/game-manager';
@@ -14,7 +14,7 @@ export class GuessForm {
   router = inject(Router);
 
   movieGuess: string = '';
-  movieTitle: string = this.gameManager.movie.title;
+  movieTitle = input<string>('');
 
   handleSubmit(e: SubmitEvent) {
     e.preventDefault();
@@ -29,7 +29,7 @@ export class GuessForm {
   }
 
   handleWin() {
-    if (this.movieGuess.trim().toLowerCase() === this.movieTitle.trim().toLowerCase()) {
+    if (this.movieGuess.trim().toLowerCase() === this.movieTitle().trim().toLowerCase()) {
       this.gameManager.gamesWon.update((num) => num + 1);
       this.gameManager.gameOverMessage.set('You won!');
       this.router.navigate(['/stats']);

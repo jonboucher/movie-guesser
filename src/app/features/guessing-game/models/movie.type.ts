@@ -5,7 +5,7 @@ export type Movie = {
   vote_average: number;
   overview: string;
   cast: string[];
-  genres: string[];
+  genres: number[] | string[];
   tagline: string;
-  image: string;
+  backdrop_path: string;
 };

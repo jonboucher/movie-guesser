@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { GuessForm } from './guess-form/guess-form';
 import { GuessTracker } from './guess-tracker/guess-tracker';
 import { GuessClue } from './guess-clue/guess-clue';
 import { GameManager } from '../../services/game-manager';
+import { Movie } from './models/movie.type';
 
 @Component({
   selector: 'app-guessing-game',
@@ -10,7 +11,10 @@ import { GameManager } from '../../services/game-manager';
   templateUrl: './guessing-game.html',
   styleUrl: './guessing-game.scss',
 })
-export class GuessingGame {
+export class GuessingGame implements OnInit {
   gameManager = inject(GameManager);
-  movie = this.gameManager.movie;
+
+  ngOnInit(): void {
+    this.gameManager.initializeGame();
+  }
 }

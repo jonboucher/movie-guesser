@@ -1,4 +1,4 @@
-<app-guess-form />
+<app-guess-form [movieTitle]="this.gameManager.movie().title" />
 <app-guess-tracker />
 
 <br />
@@ -6,20 +6,20 @@
   <h3>Clues</h3>
 
   @if (gameManager.remainingGuesses() <= 5 ) {
-  <app-guess-clue title="Release Date" [clue]="movie.release_date" />
-  <app-guess-clue title="Genre" [clue]="movie.genres" />
-  <app-guess-clue title="Rating" [clue]="movie.vote_average" />
+  <app-guess-clue title="Release Date" [clue]="this.gameManager.movie().release_date" />
+  <!-- <app-guess-clue title="Genre" [clue]="movie().genres" /> -->
+  <app-guess-clue title="Rating" [clue]="this.gameManager.movie().vote_average" />
 
   } @if (gameManager.remainingGuesses() <= 4 ) {
-  <app-guess-clue title="Cast" [clue]="movie.cast" />
+  <app-guess-clue title="Cast" [clue]="this.gameManager.movie().cast" />
 
   } @if (gameManager.remainingGuesses() <= 3 ) {
-  <app-guess-clue title="Tagline" [clue]="movie.tagline" />
+  <app-guess-clue title="Tagline" [clue]="this.gameManager.movie().tagline" />
 
   } @if (gameManager.remainingGuesses() <= 2 ) {
-  <app-guess-clue title="Overview" [clue]="movie.overview" />
+  <app-guess-clue title="Overview" [clue]="this.gameManager.movie().overview" />
 
   } @if (gameManager.remainingGuesses() <= 1 ) {
-  <app-guess-clue title="Pic" [clue]="movie.image" />
+  <app-guess-clue title="Pic" [clue]="this.gameManager.movie().backdrop_path" />
   }
 </div>
